@@ -15,6 +15,22 @@ $("#search-button").on("click", function(event) {
   // getting search input
   let searchInputEl = document.querySelector("#search-input");
   let cityName = searchInputEl.value;
+
+// function for getting the Name and timezone of the search city
+  let queryUrl = `https://timezone.abstractapi.com/v1/current_time/?api_key=385a32858a53481a94767949076e6357&location=${cityName}`
+  $.ajax({
+    url: queryUrl,
+    method: "GET"
+  }).then(function(response) {
+    console.log(response);
+  console.log(response.datetime);
+  console.log(response.timezone_location);
+  console.log(response.timezone_abbreviation);
+})
+
+
+
+
 // Here we are building the URL we need to query the database
 var queryURL = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=e10da35d7020e3de6262203a6622a4be`
   //
@@ -33,7 +49,7 @@ $.ajax({
     method: "GET"
     }).then(function(response) {
       console.log(response);
-      console.log(cityId);
+      // console.log(cityId);
       
     });
 })

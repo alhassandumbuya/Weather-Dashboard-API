@@ -5,3 +5,7 @@
 
 <!-- getting the lon and lat  - -->
 * 
+
+
+<!-- geting the location timezone - -->
+ - I am using a diffrent API for this. Using abstract api to get the time of date of the input city 
