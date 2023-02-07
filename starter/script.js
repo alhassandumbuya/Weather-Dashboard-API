@@ -22,12 +22,12 @@ $("#search-button").on("click", function(event) {
     url: queryUrl,
     method: "GET"
   }).then(function(response) {
-    console.log(response);
-  console.log(response.datetime);
-  console.log(response.timezone_location);
-  console.log(response.timezone_abbreviation);
+  let LocationDateAndTime = response.datetime;
+  let locationTimeZone =  response.timezone_abbreviation
+  console.log(LocationDateAndTime);
+  console.log(locationTimeZone);
 })
-
+$('#today').append = ``
 
 
 
@@ -48,10 +48,17 @@ $.ajax({
     url : `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=e10da35d7020e3de6262203a6622a4be`,
     method: "GET"
     }).then(function(response) {
+    //   let weatherInfo = $("#pb-3");
+    // $weatherInfo.append(`
+    // <div class="searchel">${queryURL}</div>
+    // `)
       console.log(response);
       // console.log(cityId);
       
     });
 })
+
+
+
 
 })
